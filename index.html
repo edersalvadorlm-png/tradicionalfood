@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,66 +9,84 @@
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background: #000;
     color: #fff;
 }
 
-/* HEADER */
-header {
-    background: #000;
-    text-align: center;
-    padding: 20px;
-    border-bottom: 2px solid orange;
-}
-
-header h1 {
-    color: orange;
-    margin: 0;
-}
-
 /* HERO */
 .hero {
+    height: 90vh;
+    background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 30px;
 }
 
-.hero h2 {
+.hero h1 {
+    font-size: 50px;
     color: orange;
 }
 
-/* SECCIONES */
-.section {
-    padding: 20px;
+.hero p {
+    font-size: 20px;
 }
 
-.section h2 {
-    color: orange;
-    border-bottom: 1px solid orange;
-    padding-bottom: 5px;
-}
-
-/* PRODUCTOS */
-.producto {
-    background: #111;
-    margin: 15px 0;
-    padding: 15px;
-    border-radius: 10px;
-}
-
-/* BOTONES */
 .btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 15px;
     background: orange;
     color: black;
+    padding: 12px 20px;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
 }
 
-/* BOTON FLOTANTE */
+/* SECCIONES */
+.section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    color: orange;
+}
+
+/* TARJETAS */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background: #111;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* EVENTOS */
+.evento {
+    background: #111;
+    margin: 15px auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+}
+
+/* WHATSAPP */
 .whatsapp {
     position: fixed;
     bottom: 20px;
@@ -76,8 +95,8 @@ header h1 {
     color: white;
     padding: 15px;
     border-radius: 50%;
-    font-size: 20px;
     text-decoration: none;
+    font-size: 20px;
 }
 </style>
 
@@ -85,70 +104,79 @@ header h1 {
 
 <body>
 
-<header>
-    <h1>Tradicional Food</h1>
-    <p>La mejor discada para cualquier ocasión 🔥</p>
-</header>
-
+<!-- HERO -->
 <div class="hero">
-    <h2>¡Haz tu pedido ahora!</h2>
-    <a class="btn" href="https://wa.me/5218181799894?text=Hola%20quiero%20información">Pedir por WhatsApp</a>
+    <div>
+        <h1>Tradicional Food</h1>
+        <p>La mejor discada para cualquier ocasión 🔥</p>
+        <a class="btn" href="https://wa.me/5218181799894?text=Hola quiero información">Ordenar ahora</a>
+    </div>
 </div>
 
+<!-- MENU -->
 <div class="section">
     <h2>Menú</h2>
 
-    <div class="producto">
-        <h3>Discada Medio Litro</h3>
-        <p>$120</p>
-        <a class="btn" href="https://wa.me/5218181799894?text=Quiero%20una%20discada%20medio%20litro">Pedir</a>
-    </div>
+    <div class="cards">
 
-    <div class="producto">
-        <h3>Discada 1 Litro</h3>
-        <p>$240</p>
-        <a class="btn" href="https://wa.me/5218181799894?text=Quiero%20una%20discada%201%20litro">Pedir</a>
-    </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
+            <h3>Discada Medio Litro</h3>
+            <p>$120</p>
+            <a class="btn" href="https://wa.me/5218181799894?text=Quiero discada medio litro">Pedir</a>
+        </div>
 
-    <div class="producto">
-        <h3>Salsa Tatemada (Medio Litro)</h3>
-        <p>$60</p>
-        <a class="btn" href="https://wa.me/5218181799894?text=Quiero%20salsa%20tatemada">Pedir</a>
-    </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
+            <h3>Discada 1 Litro</h3>
+            <p>$240</p>
+            <a class="btn" href="https://wa.me/5218181799894?text=Quiero discada 1 litro">Pedir</a>
+        </div>
 
-    <div class="producto">
-        <h3>Salsa Verde (Medio Litro)</h3>
-        <p>$70</p>
-        <a class="btn" href="https://wa.me/5218181799894?text=Quiero%20salsa%20verde">Pedir</a>
-    </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1604908177522-429c1a06a1c1">
+            <h3>Salsa Tatemada</h3>
+            <p>$60</p>
+            <a class="btn" href="https://wa.me/5218181799894?text=Quiero salsa tatemada">Pedir</a>
+        </div>
 
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1604908177522-429c1a06a1c1">
+            <h3>Salsa Verde</h3>
+            <p>$70</p>
+            <a class="btn" href="https://wa.me/5218181799894?text=Quiero salsa verde">Pedir</a>
+        </div>
+
+    </div>
 </div>
 
+<!-- EVENTOS -->
 <div class="section">
     <h2>Eventos</h2>
 
-    <div class="producto">
-        <h3>Evento 15 personas</h3>
+    <div class="evento">
+        <h3>15 Personas</h3>
         <p>$3,200</p>
-        <p>Incluye discada, frijoles charros, tortillas, desechables y cubiertos</p>
-        <a class="btn" href="https://wa.me/5218181799894?text=Quiero%20cotizar%20evento%20para%2015%20personas">Cotizar</a>
+        <p>Incluye discada, frijoles charros, tortillas y desechables</p>
+        <a class="btn" href="https://wa.me/5218181799894?text=Evento para 15 personas">Cotizar</a>
     </div>
 
-    <div class="producto">
-        <h3>Evento 30 personas</h3>
+    <div class="evento">
+        <h3>30 Personas</h3>
         <p>$4,000</p>
-        <a class="btn" href="https://wa.me/5218181799894?text=Quiero%20cotizar%20evento%20para%2030%20personas">Cotizar</a>
+        <a class="btn" href="https://wa.me/5218181799894?text=Evento para 30 personas">Cotizar</a>
     </div>
 
-    <div class="producto">
-        <h3>Evento 50 personas</h3>
+    <div class="evento">
+        <h3>50 Personas</h3>
         <p>$5,000</p>
-        <a class="btn" href="https://wa.me/5218181799894?text=Quiero%20cotizar%20evento%20para%2050%20personas">Cotizar</a>
+        <a class="btn" href="https://wa.me/5218181799894?text=Evento para 50 personas">Cotizar</a>
     </div>
 
 </div>
 
-<a class="whatsapp" href="https://wa.me/5218181799894?text=Hola%20quiero%20información">💬</a>
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/5218181799894?text=Hola quiero información">💬</a>
 
 </body>
 </html>
